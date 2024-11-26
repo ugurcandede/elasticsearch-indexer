@@ -61,7 +61,7 @@ def main():
         with open("data.json", "r") as file:
             tenant_ids = json.load(file)
             for tenant_id in tenant_ids:
-                send_request(args.env, args.token, args.type.value, tenant_id)
+                send_request(args.env, args.token, args.type, tenant_id)
                 sleep(5)
                 print("Sleeping for 5 seconds...")
     except (json.JSONDecodeError, FileNotFoundError) as e:
